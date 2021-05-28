@@ -1,38 +1,144 @@
-.App {
-  text-align: center;
+body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  padding:0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding: 0;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  background: royalblue;
+  color: white;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+}
+
+main {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.square-container {
+  padding: 12px;
+  border: 1px solid darkgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.square {
+  border: none;
+  font-size: 50px;
+  font-weight: bold;
+  height: 150px;
+  width: 150px;
+  margin-right: -3px;
+  margin-top: -3px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.square:hover,.square:focus {
+  outline: none;
+  background: #ddd;
+}
+
+.square:focus {
+  box-shadow: 0 0 0 2px #ffffff, 0 0 3px 5px royalblue;
+  outline: 2px dotted transparent;
+  outline-offset: 2px;
+}
+
+.square:active {
+  background-color: #393737;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.game {
+  display: flex;
+  flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.game-info {
+  height: 50px;
+  background-color: green;
+  color: white;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  margin-bottom: 5px;
 }
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+table caption {
+  margin: 10px;
+  font-size: 32px;
+}
+
+.hidden {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+.reset-button {
+  height: 50px;
+  background-color: gray;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/*
+.reset-button:focus {
+  box-shadow: 0 0 0 2px #ffffff, 0 0 3px 5px royalblue;
+  outline: 2px dotted transparent;
+  outline-offset: 2px;
+}
+*/
